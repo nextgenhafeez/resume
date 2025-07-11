@@ -30,7 +30,7 @@
             }
         }
         .gradient-text {
-            background: linear-gradient(90deg, #00A896, #FF6B6B); /* Teal to Coral */
+            background: linear-gradient(90deg, #00A896, #00CC99); /* Green Gradient (Teal to Lighter Green) */
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -48,6 +48,13 @@
             box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
             transform: translateY(-5px); /* Subtle lift on hover */
         }
+        /* Added active state for pressed effect */
+        .glass-card-hover:active {
+            transform: translateY(0px); /* Move back to original position */
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1); /* Smaller shadow */
+            transition: all 0.1s ease-out; /* Quick transition for press */
+        }
+
         .timeline-line {
             background-color: #00A896; /* Vibrant teal line */
         }
@@ -74,6 +81,135 @@
             box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
             transform: translateY(-5px);
         }
+        /* Added active state for pressed effect */
+        .glass-button-dark:active {
+            transform: translateY(0px); /* Move back to original position */
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1); /* Smaller shadow */
+            transition: all 0.1s ease-out; /* Quick transition for press */
+        }
+
+        /* Animation Keyframes */
+        @keyframes fadeInSlideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-5px); }
+            100% { transform: translateY(0px); }
+        }
+
+        @keyframes starGlow {
+            0% { box-shadow: 0 0 5px rgba(255, 255, 255, 0.5), 0 0 10px rgba(0, 168, 150, 0.3); }
+            50% { box-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(0, 168, 150, 0.6); }
+            100% { box-shadow: 0 0 5px rgba(255, 255, 255, 0.5), 0 0 10px rgba(0, 168, 150, 0.3); }
+        }
+
+        @keyframes textBlurGlow {
+            0% { text-shadow: 0 0 2px rgba(0,0,0,0.2), 0 0 5px rgba(0,0,0,0.1); }
+            50% { text-shadow: 0 0 5px rgba(0,0,0,0.4), 0 0 10px rgba(0,0,0,0.2); }
+            100% { text-shadow: 0 0 2px rgba(0,0,0,0.2), 0 0 5px rgba(0,0,0,0.1); }
+        }
+
+        .animate-on-scroll {
+            opacity: 0; /* Hidden by default */
+            transform: translateY(20px); /* Slightly moved down */
+            /* No transition here, as the animation will handle it */
+        }
+
+        .fade-in-slide-up {
+            animation: fadeInSlideUp 0.8s ease-out forwards; /* 'forwards' keeps the end state */
+        }
+
+        .float-animation {
+            animation: float 3s ease-in-out infinite; /* Apply float animation */
+        }
+
+        .star-border-effect {
+            animation: starGlow 2s ease-in-out infinite; /* Apply star glow animation */
+        }
+
+        .blur-text-effect {
+            animation: textBlurGlow 2.5s ease-in-out infinite; /* Apply blur glow animation */
+        }
+
+        /* Footer styles for flex layout */
+        .footer-contact-info .flex-row-wrap {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem; /* Increased gap for better spacing */
+            margin-top: 1.5rem;
+            font-size: 1.125rem; /* text-lg */
+            color: #4b5563;
+        }
+        .footer-contact-info .flex-row-wrap p {
+            display: flex;
+            align-items: center;
+            white-space: nowrap; /* Prevent text from wrapping within a single contact item */
+        }
+        .footer-contact-info .flex-row-wrap p .icon {
+            font-size: 1.5rem;
+            margin-right: 0.5rem;
+            color: #00A896;
+        }
+
+        /* Styles for brief page */
+        .brief-page {
+            display: none; /* Hidden by default */
+            padding: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: left;
+            background-color: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 1.5rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+        .brief-page h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            color: #000000;
+        }
+        .brief-page p {
+            font-size: 1.125rem;
+            line-height: 1.75;
+            margin-bottom: 1rem;
+            color: #333333;
+        }
+        /* New dark green liquid glass button style for "Back to Resume" */
+        .dark-green-liquid-glass-button {
+            display: block;
+            margin: 2rem auto 0;
+            padding: 0.75rem 2rem;
+            background-color: rgba(0, 100, 0, 0.4); /* Dark Green transparent background */
+            backdrop-filter: blur(25px); /* Stronger blur */
+            -webkit-backdrop-filter: blur(25px);
+            border: 1px solid rgba(0, 150, 0, 0.6); /* Darker green border */
+            border-radius: 9999px; /* Pill shape */
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+            color: #FFFFFF; /* White text for contrast */
+            font-weight: 700;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            width: fit-content;
+        }
+        .dark-green-liquid-glass-button:hover {
+            background-color: rgba(0, 120, 0, 0.6); /* Slightly less transparent on hover */
+            border-color: rgba(0, 180, 0, 0.8); /* More visible border on hover */
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            transform: translateY(-8px); /* More pronounced lift */
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -81,35 +217,43 @@
     <div class="container mx-auto p-4 md:p-8">
 
         <header class="text-center py-12">
-            <h1 class="text-4xl md:text-6xl font-black tracking-tight">Abdul Hafeez</h1>
-            <p class="mt-4 text-2xl md:text-3xl font-bold gradient-text">The Profile of a Modern AI Innovator</p>
+            <!-- Original heading structure -->
+            <h1 class="text-4xl md:text-6xl font-black tracking-tight text-black blur-text-effect">Abdul Hafeez</h1>
+            <p class="mt-4 text-2xl md:text-3xl font-bold gradient-text float-animation">Pioneering AI Solutions & Digital Transformation</p>
         </header>
 
-        <main>
-            <section id="intro" class="my-16">
+        <main id="main-content">
+            <section id="intro" class="my-16 animate-on-scroll">
                  <div class="text-center glass-card p-8 max-w-4xl mx-auto">
                     <p class="text-2xl font-semibold accent-color">AI Prompt Engineer</p>
                      <p class="mt-4 text-lg max-w-2xl mx-auto text-gray-700">
                         With a foundation of over a decade in technology, I have pivoted to the cutting edge of artificial intelligence. This is a visual summary of my journey, skills, and the value I bring to innovative projects.
                     </p>
                     <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-8">
-                        <div class="glass-card p-6">
+                        <!-- Added data attributes for brief page content -->
+                        <a href="#" class="glass-card p-6 cursor-pointer hover:scale-105 transition-transform duration-200 star-border-effect" data-target="brief-page"
+                           data-title="Years of Tech Experience"
+                           data-content="With over a decade in the technology sector, my journey spans comprehensive IT operations management, hands-on software and application development, and robust cloud infrastructure deployment. This extensive background provides a unique perspective on bridging traditional IT with cutting-edge AI innovations.">
                             <div class="text-6xl font-black accent-color">12+</div>
                             <div class="mt-2 text-lg text-gray-700">Years of Tech Experience</div>
-                        </div>
-                        <div class="glass-card p-6">
+                        </a>
+                        <a href="#" class="glass-card p-6 cursor-pointer hover:scale-105 transition-transform duration-200 star-border-effect" data-target="brief-page"
+                           data-title="Core Disciplines Mastered"
+                           data-content="My expertise is built upon three foundational pillars: **AI & Prompt Engineering** (crafting advanced prompts for LLMs like GPT-4, Gemini, and Claude), **Cloud & DevOps** (managing scalable infrastructure on AWS and GCP), and **Full-Stack Development** (building end-to-end web and mobile applications with React and Node.js). These disciplines enable me to deliver holistic and integrated solutions.">
                             <div class="text-6xl font-black accent-color">3</div>
                             <div class="mt-2 text-lg text-gray-700">Core Disciplines Mastered</div>
-                        </div>
-                        <div class="glass-card p-6">
-                            <div class="text-6xl font-black accent-color">20+</div>
+                        </a>
+                        <a href="#" class="glass-card p-6 cursor-pointer hover:scale-105 transition-transform duration-200 star-border-effect" data-target="brief-page"
+                           data-title="Technologies Leveraged"
+                           data-content="I have actively utilized and gained proficiency in over 22 technologies across various domains. Key technologies include: **LLMs** (GPT-4/o4, Gemini, Claude), **AI Frameworks** (LangChain, ReAct, Embeddings, Pinecone), **Cloud Platforms** (AWS, Google Cloud Platform, Firebase), **Development Stacks** (React, Node.js, JavaScript, Python), **DevOps Tools** (Docker, GitHub Actions), and **Project Management** (Agile, Scrum, Trello, Jira).">
+                            <div class="text-6xl font-black accent-color">22+</div>
                             <div class="mt-2 text-lg text-gray-700">Technologies Leveraged</div>
-                        </div>
+                        </a>
                     </div>
                 </div>
             </section>
             
-            <section id="skills" class="my-16 py-12">
+            <section id="skills" class="my-16 animate-on-scroll">
                 <h2 class="text-3xl font-bold text-center mb-4">The Skillset Matrix</h2>
                 <p class="text-center max-w-2xl mx-auto text-gray-700 mb-12">My expertise is a blend of AI innovation, robust cloud infrastructure, and full-stack development. This radar chart illustrates the synergy between my core competencies, forming a unique and powerful skill signature.</p>
                 <div class="glass-card p-4 md:p-8 max-w-4xl mx-auto">
@@ -119,7 +263,7 @@
                 </div>
             </section>
 
-            <section id="timeline" class="my-16 py-12">
+            <section id="timeline" class="my-16 py-12 animate-on-scroll">
                 <h2 class="text-3xl font-bold text-center mb-4">Career Evolution: From IT Ops to AI Pioneer</h2>
                  <p class="text-center max-w-2xl mx-auto text-gray-700 mb-12">My career is a story of continuous growth and adaptation. This timeline highlights my journey from managing complex IT operations in the hospitality sector to founding an AI-focused brand and leading product innovation.</p>
                 <div class="relative max-w-4xl mx-auto">
@@ -179,7 +323,7 @@
                 </div>
             </section>
             
-            <section id="projects" class="my-16 py-12">
+            <section id="projects" class="my-16 py-12 animate-on-scroll">
                  <h2 class="text-3xl font-bold text-center mb-4">Project Showcase: Building Real-World Solutions</h2>
                 <p class="text-center max-w-2xl mx-auto text-gray-700 mb-12">Theory is important, but execution is everything. Here are some of the full-scale products and solutions I've architected and developed, turning complex ideas into tangible, value-driven applications.</p>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -201,7 +345,7 @@
                 </div>
             </section>
 
-            <section id="certs-lang" class="my-16 py-12">
+            <section id="certs-lang" class="my-16 py-12 animate-on-scroll">
                  <h2 class="text-3xl font-bold text-center mb-4">Knowledge & Communication</h2>
                 <p class="text-center max-w-2xl mx-auto text-gray-700 mb-12">Continuous learning and clear communication are key to success. My certifications validate my technical skills, while my language abilities enable effective collaboration in global teams.</p>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
@@ -214,18 +358,37 @@
                     <div class="glass-card p-6 md:p-8">
                         <h3 class="text-xl font-bold text-black text-center mb-6">Key Certifications</h3>
                         <ul class="space-y-4">
-                            <li class="flex items-center"><span class="text-2xl mr-4 accent-color-secondary">☁️</span> <span class="text-gray-700">AWS Cloud Essentials</span></li>
-                            <li class="flex items-center"><span class="text-2xl mr-4 accent-color-secondary">🧠</span> <span class="text-gray-700">Google Prompting Essentials</span></li>
-                            <li class="flex items-center"><span class="text-2xl mr-4 accent-color-secondary">📈</span> <span class="text-gray-700">Project Management – Coursera</span></li>
-                             <li class="flex items-center"><span class="text-2xl mr-4 accent-color-secondary">🔧</span> <span class="text-gray-700">CCNA, CCNP, MCITP</span></li>
+                            <li class="flex items-center">
+                                <span class="text-2xl mr-4 accent-color-secondary">☁️</span>
+                                <span class="text-gray-700">AWS Cloud Essentials</span>
+                            </li>
+                            <li class="flex items-center">
+                                <span class="text-2xl mr-4 accent-color-secondary">🧠</span>
+                                <span class="text-gray-700">Google Prompting Essentials</span>
+                            </li>
+                            <li class="flex items-center">
+                                <span class="text-2xl mr-4 accent-color-secondary">📈</span>
+                                <span class="text-gray-700">Project Management – Coursera</span>
+                            </li>
+                             <li class="flex items-center">
+                                <span class="text-2xl mr-4 accent-color-secondary">🔧</span>
+                                <span class="text-gray-700">CCNA, CCNP, MCITP</span>
+                            </li>
                         </ul>
                     </div>
                 </div>
             </section>
 
         </main>
+
+        <!-- New Brief About Me Page (Initially Hidden) -->
+        <section id="brief-page" class="brief-page my-16 animate-on-scroll">
+            <h2 class="gradient-text" id="brief-page-title"></h2>
+            <p id="brief-page-content"></p>
+            <a href="#" class="dark-green-liquid-glass-button" id="back-to-resume">Back to Resume</a>
+        </section>
         
-        <footer class="text-center py-16 mt-12 border-t border-gray-200">
+        <footer class="text-center py-16 mt-12 border-t border-gray-200 animate-on-scroll">
             <h2 class="text-3xl font-bold text-black">Ready to Transform? Let's Collaborate.</h2>
             <p class="mt-4 max-w-xl mx-auto text-gray-700">Let's connect and discuss how my expertise can bring your projects to life.</p>
             <div class="mt-8 flex justify-center space-x-4">
@@ -236,25 +399,21 @@
                     Visit BlackLayers.ca
                 </a>
             </div>
-            <div class="mt-8 text-lg text-gray-700 grid grid-cols-1 md:grid-cols-2 gap-y-2 gap-x-8 max-w-2xl mx-auto">
-                <p class="flex items-center justify-center md:justify-end">
-                    <span class="text-2xl mr-2 accent-color">📍</span> Safi, Morocco
-                </p>
-                <p class="flex items-center justify-center md:justify-start">
-                    <span class="text-2xl mr-2 accent-color">📧</span> bl@blacklayers.ca
-                </p>
-                <p class="flex items-center justify-center md:justify-end">
-                    <span class="text-2xl mr-2 accent-color">📧</span> hafeez1618@outlook.com
-                </p>
-                <p class="flex items-center justify-center md:justify-start">
-                    <span class="text-2xl mr-2 accent-color">📱</span> +212 699 945033 (Mobile)
-                    <a href="https://wa.me/212699945033" target="_blank" class="ml-2 text-green-500 hover:text-green-600">
-                        <span class="text-2xl">💬</span>
-                    </a>
-                </p>
-                <p class="flex items-center justify-center md:col-span-2">
-                    <span class="text-2xl mr-2 accent-color">🏢</span> +1 587 429 6200 (Company)
-                </p>
+            <div class="footer-contact-info">
+                <div class="flex-row-wrap">
+                    <p>
+                        <span class="text-2xl mr-2 accent-color">📍</span> Safi, Morocco
+                    </p>
+                    <p>
+                        <span class="text-2xl mr-2 accent-color">📧</span> hafeez1618@outlook.com
+                    </p>
+                    <p class="flex items-center justify-center md:justify-start">
+                        <span class="text-2xl mr-2 accent-color">📱</span> +212 699 945033 (Mobile)
+                        <a href="https://wa.me/212699945033" target="_blank" class="ml-2 text-green-500 hover:text-green-600">
+                            <span class="text-2xl">💬</span>
+                        </a>
+                    </p>
+                </div>
             </div>
         </footer>
 
@@ -356,9 +515,15 @@
                     labels: ['English', 'Arabic'],
                     datasets: [{
                         label: 'Proficiency',
-                        data: [100, 75], 
-                        backgroundColor: ['#FF6B6B', 'rgba(0, 168, 150, 0.8)'], /* Coral and Teal with opacity */
-                        borderColor: ['#FF6B6B', '#00A896'], /* Coral and Teal */
+                        data: [100, 40], /* English 100%, Arabic 40% */
+                        backgroundColor: [
+                            'rgba(0, 0, 0, 0.4)', /* Crystal Glass Black for English */
+                            'rgba(0, 128, 0, 0.4)' /* Dark Green Liquid Glass for Arabic */
+                        ],
+                        borderColor: [
+                            'rgba(255, 255, 255, 0.6)', /* White border for English */
+                            'rgba(0, 128, 0, 0.8)' /* Dark Green border for Arabic */
+                        ],
                         borderWidth: 1
                     }]
                 },
@@ -375,7 +540,7 @@
                                 color: '#333333', /* Darker text */
                                 callback: function(value, index, values) {
                                     if(value === 100) return 'Fluent';
-                                    if(value === 75) return 'Conversational';
+                                    if(value === 40) return 'Basic';
                                     return '';
                                 }
                             }
@@ -395,9 +560,65 @@
             });
         };
 
+        // Intersection Observer for scroll animations
+        const animateOnScrollElements = document.querySelectorAll('.animate-on-scroll');
+
+        const observerOptions = {
+            root: null, /* viewport */
+            rootMargin: '0px',
+            threshold: 0.1 /* 10% of element visible triggers animation */
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in-slide-up'); /* Add the animation class */
+                    observer.unobserve(entry.target); /* Stop observing once animated */
+                }
+            });
+        }, observerOptions);
+
+        animateOnScrollElements.forEach(element => {
+            observer.observe(element);
+        });
+
+
         window.onload = function() {
             renderSkillsChart();
             renderLanguageChart();
+
+            // Handle brief page visibility
+            const mainContent = document.getElementById('main-content');
+            const briefPage = document.getElementById('brief-page');
+            const briefPageTitle = document.getElementById('brief-page-title');
+            const briefPageContent = document.getElementById('brief-page-content');
+            const briefPageTriggers = document.querySelectorAll('[data-target="brief-page"]');
+            const backToResumeButton = document.getElementById('back-to-resume');
+
+            briefPageTriggers.forEach(trigger => {
+                trigger.addEventListener('click', (event) => {
+                    event.preventDefault(); // Prevent default anchor link behavior
+                    
+                    // Get dynamic content from data attributes
+                    const title = trigger.getAttribute('data-title');
+                    const content = trigger.getAttribute('data-content');
+
+                    // Set content for the brief page
+                    briefPageTitle.textContent = title;
+                    briefPageContent.innerHTML = content; // Use innerHTML to render bold tags
+
+                    mainContent.style.display = 'none';
+                    briefPage.style.display = 'block';
+                    window.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll to top
+                });
+            });
+
+            backToResumeButton.addEventListener('click', (event) => {
+                event.preventDefault(); // Prevent default anchor link behavior
+                briefPage.style.display = 'none';
+                mainContent.style.display = 'block';
+                window.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll to top
+            });
         };
 
     </script>
