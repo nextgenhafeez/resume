@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+<!-- Chosen Palette: Teal and Coral on Light Grey/White -->
+<!-- Application Structure Plan: The resume uses a single-page, vertical scrolling structure with distinct thematic sections (Intro, Skills, Timeline, Projects, Certs, Contact). This is highly effective for a resume as it creates a clear narrative flow of the user's career. Interaction is focused on data visualization (charts) rather than navigation, keeping the user focused on the content. The new skills and projects are integrated directly into the existing, logical structure to maintain this flow. -->
+<!-- Visualization & Content Choices: Report Info: New 'Flutter & iOS' skill. Goal: Compare proficiency with other skills. Viz/Method: Added as a new axis to the existing Chart.js Radar Chart. Interaction: Hover tooltips. Justification: Radar charts are excellent for comparing multiple quantitative variables, making it easy to see the user's strengths at a glance. Report Info: Four new Flutter projects. Goal: Showcase practical application of new skill. Viz/Method: Added as new 'glass-card' elements within the existing CSS grid layout. Interaction: Subtle hover effects. Justification: A visual grid of projects is scannable and allows recruiters to quickly assess the breadth and relevance of the user's work. -->
+<!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -12,8 +16,8 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background: linear-gradient(135deg, #F8F8F8 0%, #FFFFFF 50%, #F8F8F8 100%); /* Softer White/Light Grey Gradient */
-            color: #333333; /* Darker text for contrast on light background */
+            background: linear-gradient(135deg, #F8F8F8 0%, #FFFFFF 50%, #F8F8F8 100%);
+            color: #333333;
         }
         .chart-container {
             position: relative;
@@ -30,47 +34,47 @@
             }
         }
         .gradient-text {
-            background: linear-gradient(90deg, #00A896, #FF6B6B); /* Teal to Coral */
+            background: linear-gradient(90deg, #00A896, #FF6B6B);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
         .glass-card {
-            background-color: rgba(255, 255, 255, 0.6); /* Slightly more transparent white */
-            backdrop-filter: blur(20px); /* Stronger blur for more prominent glass effect */
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(0, 168, 150, 0.2); /* Subtle teal border */
-            border-radius: 1.5rem; /* More rounded corners */
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1); /* Enhanced shadow for depth */
-            color: #333333; /* Ensure text inside is dark */
-        }
-        .glass-card-hover:hover {
-            border-color: rgba(0, 168, 150, 0.6); /* More visible teal on hover */
-            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
-            transform: translateY(-5px); /* Subtle lift on hover */
-        }
-        .timeline-line {
-            background-color: #00A896; /* Vibrant teal line */
-        }
-        h1, h2, h3 {
-            color: #000000; /* Ensure headings are black */
-        }
-        .accent-color {
-            color: #00A896; /* For specific accents like numbers (Teal) */
-        }
-        .accent-color-secondary {
-            color: #FF6B6B; /* For secondary accents (Coral) */
-        }
-        .glass-button-dark {
-            background-color: rgba(0, 0, 0, 0.6); /* Dark transparent background */
+            background-color: rgba(255, 255, 255, 0.6);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle white border */
+            border: 1px solid rgba(0, 168, 150, 0.2);
             border-radius: 1.5rem;
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-            color: #FFFFFF; /* White text */
+            color: #333333;
+        }
+        .glass-card-hover:hover {
+            border-color: rgba(0, 168, 150, 0.6);
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+            transform: translateY(-5px);
+        }
+        .timeline-line {
+            background-color: #00A896;
+        }
+        h1, h2, h3 {
+            color: #000000;
+        }
+        .accent-color {
+            color: #00A896;
+        }
+        .accent-color-secondary {
+            color: #FF6B6B;
+        }
+        .glass-button-dark {
+            background-color: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 1.5rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            color: #FFFFFF;
         }
         .glass-button-dark:hover {
-            border-color: rgba(255, 255, 255, 0.6); /* More visible white on hover */
+            border-color: rgba(255, 255, 255, 0.6);
             box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
             transform: translateY(-5px);
         }
@@ -88,9 +92,9 @@
         <main>
             <section id="intro" class="my-16">
                  <div class="text-center glass-card p-8 max-w-4xl mx-auto">
-                    <p class="text-2xl font-semibold accent-color">AI Prompt Engineer</p>
+                    <p class="text-2xl font-semibold accent-color">AI Prompt Engineer & Flutter Developer</p>
                      <p class="mt-4 text-lg max-w-2xl mx-auto text-gray-700">
-                        With a foundation of over a decade in technology, I have pivoted to the cutting edge of artificial intelligence. This is a visual summary of my journey, skills, and the value I bring to innovative projects.
+                        With a foundation of over a decade in technology, I have pivoted to the cutting edge of artificial intelligence and mobile development. This is a visual summary of my journey, skills, and the value I bring to innovative projects.
                     </p>
                     <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-8">
                         <div class="glass-card p-6">
@@ -98,11 +102,11 @@
                             <div class="mt-2 text-lg text-gray-700">Years of Tech Experience</div>
                         </div>
                         <div class="glass-card p-6">
-                            <div class="text-6xl font-black accent-color">3</div>
+                            <div class="text-6xl font-black accent-color">4</div>
                             <div class="mt-2 text-lg text-gray-700">Core Disciplines Mastered</div>
                         </div>
                         <div class="glass-card p-6">
-                            <div class="text-6xl font-black accent-color">20+</div>
+                            <div class="text-6xl font-black accent-color">25+</div>
                             <div class="mt-2 text-lg text-gray-700">Technologies Leveraged</div>
                         </div>
                     </div>
@@ -111,7 +115,7 @@
             
             <section id="skills" class="my-16 py-12">
                 <h2 class="text-3xl font-bold text-center mb-4">The Skillset Matrix</h2>
-                <p class="text-center max-w-2xl mx-auto text-gray-700 mb-12">My expertise is a blend of AI innovation, robust cloud infrastructure, and full-stack development. This radar chart illustrates the synergy between my core competencies, forming a unique and powerful skill signature.</p>
+                <p class="text-center max-w-2xl mx-auto text-gray-700 mb-12">My expertise is a blend of AI innovation, robust cloud infrastructure, and full-stack mobile & web development. This radar chart illustrates the synergy between my core competencies.</p>
                 <div class="glass-card p-4 md:p-8 max-w-4xl mx-auto">
                     <div class="chart-container">
                         <canvas id="skillsRadarChart"></canvas>
@@ -191,12 +195,32 @@
                      <div class="glass-card glass-card-hover p-6 transition-all duration-300">
                         <div class="text-4xl mb-4 accent-color-secondary">🚢</div>
                         <h3 class="text-xl font-bold text-black">Voyage Home</h3>
-                        <p class="text-sm text-gray-700 mt-2">A complete Airbnb-style web and mobile application, demonstrating full-stack capabilities in building a complex, user-centric platform for the hospitality market.</p>
+                        <p class="text-sm text-gray-700 mt-2">A complete Airbnb-style web application, demonstrating full-stack capabilities in building a complex, user-centric platform.</p>
                     </div>
                      <div class="glass-card glass-card-hover p-6 transition-all duration-300">
                         <div class="text-4xl mb-4 accent-color-secondary">🏡</div>
                         <h3 class="text-xl font-bold text-black">Offer Hero</h3>
-                        <p class="text-sm text-gray-700 mt-2">A specialized real estate lead-generation application featuring AI-powered chat support to streamline communication and qualify potential leads effectively.</p>
+                        <p class="text-sm text-gray-700 mt-2">A specialized real estate lead-generation application featuring AI-powered chat support to streamline communication and qualify potential leads.</p>
+                    </div>
+                    <div class="glass-card glass-card-hover p-6 transition-all duration-300">
+                        <div class="text-4xl mb-4 accent-color-secondary">🍽️</div>
+                        <h3 class="text-xl font-bold text-black">Feng (Catering Services)</h3>
+                        <p class="text-sm text-gray-700 mt-2">A mobile application designed to streamline catering services, allowing users to browse menus, place orders, and manage catering events.</p>
+                    </div>
+                    <div class="glass-card glass-card-hover p-6 transition-all duration-300">
+                        <div class="text-4xl mb-4 accent-color-secondary">👗</div>
+                        <h3 class="text-xl font-bold text-black">Virtual Try Room (AI Cloths Style)</h3>
+                        <p class="text-sm text-gray-700 mt-2">An innovative application that leverages AI to allow users to virtually try on clothing, helping them visualize different styles before purchasing.</p>
+                    </div>
+                    <div class="glass-card glass-card-hover p-6 transition-all duration-300">
+                        <div class="text-4xl mb-4 accent-color-secondary">🙏</div>
+                        <h3 class="text-xl font-bold text-black">Bible Chat (Religion Faith Connect)</h3>
+                        <p class="text-sm text-gray-700 mt-2">A community-focused app that facilitates conversations and connects users through shared religious faith and knowledge.</p>
+                    </div>
+                    <div class="glass-card glass-card-hover p-6 transition-all duration-300">
+                        <div class="text-4xl mb-4 accent-color-secondary">👚</div>
+                        <h3 class="text-xl font-bold text-black">Zimbi (AI Wardrobe Style)</h3>
+                        <p class="text-sm text-gray-700 mt-2">An AI-powered personal stylist app that helps users manage their wardrobe and get style recommendations based on their existing clothes.</p>
                     </div>
                 </div>
             </section>
@@ -303,15 +327,16 @@
                     labels: [
                         'AI & Prompt Engineering',
                         'Cloud & DevOps',
-                        'Full-Stack Development',
+                        'Full-Stack Web Dev',
+                        'Flutter & iOS Dev',
                         'Project Management',
                         'IT Operations'
                     ].map(l => wrapLabel(l)),
                     datasets: [{
                         label: 'Proficiency Level',
-                        data: [9, 8.5, 8, 7, 9.5],
-                        backgroundColor: 'rgba(0, 168, 150, 0.2)', /* Teal with opacity */
-                        borderColor: 'rgba(0, 168, 150, 1)', /* Teal */
+                        data: [9, 8.5, 8, 8, 7, 9.5],
+                        backgroundColor: 'rgba(0, 168, 150, 0.2)',
+                        borderColor: 'rgba(0, 168, 150, 1)',
                         pointBackgroundColor: 'rgba(0, 168, 150, 1)',
                         pointBorderColor: '#fff',
                         pointHoverBackgroundColor: '#fff',
@@ -323,17 +348,17 @@
                     maintainAspectRatio: false,
                     scales: {
                         r: {
-                            angleLines: { color: 'rgba(0, 0, 0, 0.2)' }, /* Darker lines */
-                            grid: { color: 'rgba(0, 0, 0, 0.2)' }, /* Darker grid */
+                            angleLines: { color: 'rgba(0, 0, 0, 0.2)' },
+                            grid: { color: 'rgba(0, 0, 0, 0.2)' },
                             pointLabels: { 
-                                color: '#333333', /* Darker text */
+                                color: '#333333',
                                 font: {
                                     size: 12
                                 }
                             },
                             ticks: {
-                                color: '#333333', /* Darker text */
-                                backdropColor: 'rgba(255,255,255,0.8)', /* Lighter backdrop */
+                                color: '#333333',
+                                backdropColor: 'rgba(255,255,255,0.8)',
                                 stepSize: 2
                             }
                         }
@@ -357,8 +382,8 @@
                     datasets: [{
                         label: 'Proficiency',
                         data: [100, 75], 
-                        backgroundColor: ['#FF6B6B', 'rgba(0, 168, 150, 0.8)'], /* Coral and Teal with opacity */
-                        borderColor: ['#FF6B6B', '#00A896'], /* Coral and Teal */
+                        backgroundColor: ['#FF6B6B', 'rgba(0, 168, 150, 0.8)'],
+                        borderColor: ['#FF6B6B', '#00A896'],
                         borderWidth: 1
                     }]
                 },
@@ -370,9 +395,9 @@
                         x: {
                             beginAtZero: true,
                             max: 100,
-                            grid: { color: 'rgba(0, 0, 0, 0.1)' }, /* Darker grid */
+                            grid: { color: 'rgba(0, 0, 0, 0.1)' },
                             ticks: { 
-                                color: '#333333', /* Darker text */
+                                color: '#333333',
                                 callback: function(value, index, values) {
                                     if(value === 100) return 'Fluent';
                                     if(value === 75) return 'Conversational';
@@ -382,7 +407,7 @@
                         },
                         y: {
                            grid: { display: false },
-                           ticks: { color: '#333333', font: { size: 14 } } /* Darker text */
+                           ticks: { color: '#333333', font: { size: 14 } }
                         }
                     },
                     plugins: {
@@ -403,3 +428,4 @@
     </script>
 </body>
 </html>
+
