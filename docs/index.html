@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!-- Chosen Palette: Teal and Coral on Light Grey/White -->
-<!-- Application Structure Plan: The resume uses a single-page, vertical scrolling structure with distinct thematic sections (Intro, Skills, Timeline, Projects, Certs, Contact). This is highly effective for a resume as it creates a clear narrative flow of the user's career. Interaction is focused on data visualization (charts) rather than navigation, keeping the user focused on the content. The new skills and projects are integrated directly into the existing, logical structure to maintain this flow. -->
-<!-- Visualization & Content Choices: Report Info: New 'Flutter & iOS' skill. Goal: Compare proficiency with other skills. Viz/Method: Added as a new axis to the existing Chart.js Radar Chart. Interaction: Hover tooltips. Justification: Radar charts are excellent for comparing multiple quantitative variables, making it easy to see the user's strengths at a glance. Report Info: Four new Flutter projects. Goal: Showcase practical application of new skill. Viz/Method: Added as new 'glass-card' elements within the existing CSS grid layout. Interaction: Subtle hover effects. Justification: A visual grid of projects is scannable and allows recruiters to quickly assess the breadth and relevance of the user's work. -->
+<!-- Application Structure Plan: The resume uses a single-page, vertical scrolling structure with distinct thematic sections (Intro, Skills, Timeline, Projects, Certs, Contact). This is highly effective for a resume as it creates a clear narrative flow of a professional's career. Interaction is focused on data visualization (charts) rather than complex navigation, keeping the user focused on the content. The new skills and projects from the source document are integrated directly into this existing, logical structure to maintain the narrative flow. -->
+<!-- Visualization & Content Choices: Source Info: New 'Flutter & iOS' skill. Goal: Compare proficiency against other skills. Viz/Method: Added as a new axis to the existing Chart.js Radar Chart. Interaction: Hover tooltips. Justification: Radar charts are excellent for comparing multiple quantitative variables, making it easy for a recruiter to see a developer's strengths at a glance. Source Info: Four new Flutter projects. Goal: Showcase practical application of the new skill. Viz/Method: Added as new 'glass-card' elements within the existing CSS grid layout. Interaction: Subtle hover effects. Justification: A visual grid of projects is scannable and allows recruiters to quickly assess the breadth and relevance of a developer's work. -->
 <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
 <html lang="en">
 <head>
@@ -46,6 +46,7 @@
             border-radius: 1.5rem;
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
             color: #333333;
+            transition: all 0.3s ease;
         }
         .glass-card-hover:hover {
             border-color: rgba(0, 168, 150, 0.6);
@@ -72,11 +73,18 @@
             border-radius: 1.5rem;
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
             color: #FFFFFF;
+            transition: all 0.3s ease;
         }
         .glass-button-dark:hover {
             border-color: rgba(255, 255, 255, 0.6);
             box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
             transform: translateY(-5px);
+        }
+        .project-logo {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            margin: 0 auto 1rem;
         }
     </style>
 </head>
@@ -115,7 +123,7 @@
             
             <section id="skills" class="my-16 py-12">
                 <h2 class="text-3xl font-bold text-center mb-4">The Skillset Matrix</h2>
-                <p class="text-center max-w-2xl mx-auto text-gray-700 mb-12">My expertise is a blend of AI innovation, robust cloud infrastructure, and full-stack mobile & web development. This radar chart illustrates the synergy between my core competencies.</p>
+                <p class="text-center max-w-2xl mx-auto text-gray-700 mb-12">My expertise is a blend of AI innovation, robust cloud infrastructure, and full-stack mobile & web development. This radar chart illustrates the synergy between my core competencies, forming a unique and powerful skill signature.</p>
                 <div class="glass-card p-4 md:p-8 max-w-4xl mx-auto">
                     <div class="chart-container">
                         <canvas id="skillsRadarChart"></canvas>
@@ -186,41 +194,26 @@
             <section id="projects" class="my-16 py-12">
                  <h2 class="text-3xl font-bold text-center mb-4">Project Showcase: Building Real-World Solutions</h2>
                 <p class="text-center max-w-2xl mx-auto text-gray-700 mb-12">Theory is important, but execution is everything. Here are some of the full-scale products and solutions I've architected and developed, turning complex ideas into tangible, value-driven applications.</p>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                    <div class="glass-card glass-card-hover p-6 transition-all duration-300">
-                        <div class="text-4xl mb-4 accent-color-secondary">👕</div>
-                        <h3 class="text-xl font-bold text-black">Agentic Laundry Wardrobe AI</h3>
-                        <p class="text-sm text-gray-700 mt-2">A multi-agent AI assistant currently in development, designed to revolutionize laundry and wardrobe management services through intelligent automation.</p>
-                    </div>
-                     <div class="glass-card glass-card-hover p-6 transition-all duration-300">
-                        <div class="text-4xl mb-4 accent-color-secondary">🚢</div>
-                        <h3 class="text-xl font-bold text-black">Voyage Home</h3>
-                        <p class="text-sm text-gray-700 mt-2">A complete Airbnb-style web application, demonstrating full-stack capabilities in building a complex, user-centric platform.</p>
-                    </div>
-                     <div class="glass-card glass-card-hover p-6 transition-all duration-300">
-                        <div class="text-4xl mb-4 accent-color-secondary">🏡</div>
-                        <h3 class="text-xl font-bold text-black">Offer Hero</h3>
-                        <p class="text-sm text-gray-700 mt-2">A specialized real estate lead-generation application featuring AI-powered chat support to streamline communication and qualify potential leads.</p>
-                    </div>
-                    <div class="glass-card glass-card-hover p-6 transition-all duration-300">
-                        <div class="text-4xl mb-4 accent-color-secondary">🍽️</div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+                    <div class="glass-card glass-card-hover p-6 flex flex-col items-center text-center">
+                        <img src="https://storage.googleapis.com/gwm-artifacts/A_B_testing_abdul/FENG.jpg" alt="FENG logo" class="project-logo">
                         <h3 class="text-xl font-bold text-black">Feng (Catering Services)</h3>
-                        <p class="text-sm text-gray-700 mt-2">A mobile application designed to streamline catering services, allowing users to browse menus, place orders, and manage catering events.</p>
+                        <p class="text-sm text-gray-700 mt-2 flex-grow">A mobile application designed to streamline catering services, allowing users to browse menus, place orders, and manage catering events.</p>
                     </div>
-                    <div class="glass-card glass-card-hover p-6 transition-all duration-300">
-                        <div class="text-4xl mb-4 accent-color-secondary">👗</div>
-                        <h3 class="text-xl font-bold text-black">Virtual Try Room (AI Cloths Style)</h3>
-                        <p class="text-sm text-gray-700 mt-2">An innovative application that leverages AI to allow users to virtually try on clothing, helping them visualize different styles before purchasing.</p>
+                    <div class="glass-card glass-card-hover p-6 flex flex-col items-center text-center">
+                        <img src="https://storage.googleapis.com/gwm-artifacts/A_B_testing_abdul/Virtual%20Try%20Room%20AI.jpg" alt="Virtual Try Room AI logo" class="project-logo">
+                        <h3 class="text-xl font-bold text-black">Virtual Try Room</h3>
+                        <p class="text-sm text-gray-700 mt-2 flex-grow">An innovative application that leverages AI to allow users to virtually try on clothing and accessories, helping them visualize different styles before making a purchase.</p>
                     </div>
-                    <div class="glass-card glass-card-hover p-6 transition-all duration-300">
-                        <div class="text-4xl mb-4 accent-color-secondary">🙏</div>
-                        <h3 class="text-xl font-bold text-black">Bible Chat (Religion Faith Connect)</h3>
-                        <p class="text-sm text-gray-700 mt-2">A community-focused app that facilitates conversations and connects users through shared religious faith and knowledge.</p>
+                    <div class="glass-card glass-card-hover p-6 flex flex-col items-center text-center">
+                        <img src="https://storage.googleapis.com/gwm-artifacts/A_B_testing_abdul/Bible%20CHat.jpg" alt="Bible Chat logo" class="project-logo">
+                        <h3 class="text-xl font-bold text-black">Bible Chat</h3>
+                        <p class="text-sm text-gray-700 mt-2 flex-grow">A community-focused app that facilitates conversations and connects users through shared religious faith and knowledge.</p>
                     </div>
-                    <div class="glass-card glass-card-hover p-6 transition-all duration-300">
-                        <div class="text-4xl mb-4 accent-color-secondary">👚</div>
+                    <div class="glass-card glass-card-hover p-6 flex flex-col items-center text-center">
+                        <img src="https://storage.googleapis.com/gwm-artifacts/A_B_testing_abdul/ZIMBI.png" alt="Zimbi logo" class="project-logo">
                         <h3 class="text-xl font-bold text-black">Zimbi (AI Wardrobe Style)</h3>
-                        <p class="text-sm text-gray-700 mt-2">An AI-powered personal stylist app that helps users manage their wardrobe and get style recommendations based on their existing clothes.</p>
+                        <p class="text-sm text-gray-700 mt-2 flex-grow">An AI-powered personal stylist app that helps users manage their wardrobe and get style recommendations based on their existing clothes and preferences.</p>
                     </div>
                 </div>
             </section>
@@ -253,10 +246,10 @@
             <h2 class="text-3xl font-bold text-black">Ready to Transform? Let's Collaborate.</h2>
             <p class="mt-4 max-w-xl mx-auto text-gray-700">Let's connect and discuss how my expertise can bring your projects to life.</p>
             <div class="mt-8 flex justify-center space-x-4">
-                <a href="https://github.com/nextgenhafeez" target="_blank" class="glass-card glass-card-hover text-black font-bold py-3 px-6 transition-all duration-300">
+                <a href="https://github.com/nextgenhafeez" target="_blank" class="glass-card glass-card-hover text-black font-bold py-3 px-6">
                     View GitHub
                 </a>
-                <a href="https://BlackLayers.ca" target="_blank" class="glass-button-dark font-bold py-3 px-6 transition-all duration-300">
+                <a href="https://BlackLayers.ca" target="_blank" class="glass-button-dark font-bold py-3 px-6">
                     Visit BlackLayers.ca
                 </a>
             </div>
@@ -334,7 +327,7 @@
                     ].map(l => wrapLabel(l)),
                     datasets: [{
                         label: 'Proficiency Level',
-                        data: [9, 8.5, 8, 8, 7, 9.5],
+                        data: [9, 8.5, 8, 8.5, 7, 9.5],
                         backgroundColor: 'rgba(0, 168, 150, 0.2)',
                         borderColor: 'rgba(0, 168, 150, 1)',
                         pointBackgroundColor: 'rgba(0, 168, 150, 1)',
@@ -359,7 +352,9 @@
                             ticks: {
                                 color: '#333333',
                                 backdropColor: 'rgba(255,255,255,0.8)',
-                                stepSize: 2
+                                stepSize: 2,
+                                beginAtZero: true,
+                                max: 10
                             }
                         }
                     },
@@ -428,4 +423,3 @@
     </script>
 </body>
 </html>
-
