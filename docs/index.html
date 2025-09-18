@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abdul Hafeez - AI Prompt Engineer | Visual Resume</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://kit.fontawesome.com/a42b1580e0.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8;
+            color: #333333;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            height: 300px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #00A896, #FF6B6B);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .glass-card {
+            background-color: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(0, 168, 150, 0.2);
+            border-radius: 1.5rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+            color: #333333;
+            transition: all 0.3s ease;
+        }
+        .glass-card-hover:hover {
+            border-color: rgba(0, 168, 150, 0.6);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+            transform: translateY(-5px);
+        }
+        .timeline-line {
+            background: linear-gradient(180deg, #00A896, #FF6B6B);
+            width: 4px;
+        }
+        .timeline-dot {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            border: 4px solid #f0f4f8;
+            transform: translateX(-50%);
+        }
+        .accent-color {
+            color: #00A896;
+        }
+        .accent-color-secondary {
+            color: #FF6B6B;
+        }
+        .download-button {
+            background: linear-gradient(90deg, #00A896, #FF6B6B);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 9999px;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(0, 168, 150, 0.4);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .download-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 168, 150, 0.6);
+        }
+        .project-logo {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            border-radius: 1.5rem;
+            margin: 0 auto 1rem;
+        }
+    </style>
+</head>
+<body class="antialiased p-4 md:p-8 lg:p-12">
+
+    <div class="container mx-auto max-w-7xl">
+
+        <!-- Header Section -->
+        <header class="text-center py-12">
+            <h1 class="text-4xl md:text-6xl font-black tracking-tight text-gray-900">Abdul Hafeez</h1>
+            <p class="mt-4 text-2xl md:text-3xl font-bold gradient-text">The Profile of a Modern AI Innovator</p>
+        </header>
+
+        <main>
+            <!-- Introduction & Core Stats Section -->
+            <section id="intro" class="my-16">
+                 <div class="text-center glass-card p-8 md:p-12 max-w-5xl mx-auto">
+                    <p class="text-2xl font-semibold accent-color">AI Prompt Engineer & Flutter Developer</p>
+                     <p class="mt-4 text-lg max-w-2xl mx-auto text-gray-700 leading-relaxed">
+                        With over a decade of experience, I've pivoted to the cutting edge of artificial intelligence and mobile development. This visual summary showcases my journey, skills, and the value I bring to innovative projects.
+                    </p>
+                    <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="glass-card p-6">
+                            <div class="text-5xl font-black accent-color">12+</div>
+                            <div class="mt-2 text-lg text-gray-700">Years of Tech Experience</div>
+                        </div>
+                        <div class="glass-card p-6">
+                            <div class="text-5xl font-black accent-color">4</div>
+                            <div class="mt-2 text-lg text-gray-700">Core Disciplines Mastered</div>
+                        </div>
+                        <div class="glass-card p-6">
+                            <div class="text-5xl font-black accent-color">25+</div>
+                            <div class="mt-2 text-lg text-gray-700">Technologies Leveraged</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Skills & Proficiency Section -->
+            <section id="skills" class="my-20 py-12">
+                <h2 class="text-3xl font-bold text-center mb-4 text-gray-900">The Skillset Matrix</h2>
+                <p class="text-center max-w-2xl mx-auto text-gray-700 mb-12">My expertise is a blend of AI innovation, robust cloud infrastructure, and full-stack mobile & web development. This radar chart illustrates the synergy between my core competencies.</p>
+                <div class="glass-card p-6 md:p-12 max-w-4xl mx-auto">
+                    <div class="chart-container">
+                        <canvas id="skillsRadarChart"></canvas>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Career Evolution Timeline Section -->
+            <section id="timeline" class="my-20 py-12">
+                <h2 class="text-3xl font-bold text-center mb-4 text-gray-900">Career Evolution: From IT Ops to AI Pioneer</h2>
+                 <p class="text-center max-w-2xl mx-auto text-gray-700 mb-12">My career is a story of continuous growth and adaptation. This timeline highlights my journey from managing complex IT operations to founding an AI-focused brand.</p>
+                <div class="relative max-w-4xl mx-auto">
+                    <div class="absolute left-1/2 -ml-0.5 w-1 h-full timeline-line"></div>
+                    <div class="space-y-16">
+                        <div class="relative">
+                            <div class="timeline-dot absolute left-1/2 top-0 bg-[#FF6B6B]"></div>
+                            <div class="md:flex items-center md:space-x-8">
+                                <div class="md:w-1/2 text-left md:text-right pr-8">
+                                    <p class="text-xl font-bold text-gray-900">AI & Innovation Leadership</p>
+                                    <p class="text-gray-700">2024 – Present</p>
+                                </div>
+                                <div class="md:w-1/2 mt-4 md:mt-0 pl-8 border-l-4 border-transparent md:border-l-0 md:border-r-4 md:border-r-transparent">
+                                    <div class="glass-card p-6">
+                                        <h3 class="font-bold text-gray-900">Lead Prompt Engineer & Co-Founder</h3>
+                                        <p class="text-gray-600">BlackLayers.ca</p>
+                                        <p class="mt-2 text-sm text-gray-700">Founded a brand for AI product innovation, developing full-scale platforms and leading prompt design, LLM pipelines, and cloud infrastructure.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="relative">
+                            <div class="timeline-dot absolute left-1/2 top-0 bg-[#00A896]"></div>
+                            <div class="md:flex flex-row-reverse items-center md:space-x-8 md:space-x-reverse">
+                                <div class="md:w-1/2 text-left pl-8">
+                                    <p class="text-xl font-bold text-gray-900">IT Operations Leadership</p>
+                                    <p class="text-gray-700">2018 – 2024</p>
+                                </div>
+                                <div class="md:w-1/2 mt-4 md:mt-0 pr-8 border-l-4 border-transparent md:border-l-0 md:border-r-4 md:border-r-transparent">
+                                     <div class="glass-card p-6 text-left">
+                                        <h3 class="font-bold text-gray-900">IT Operations & Systems Manager</h3>
+                                        <p class="text-gray-600">Iridium Hotel (Hand & Company)</p>
+                                        <p class="mt-2 text-sm text-gray-700">Managed all IT operations, staff training, and deployed smart infrastructure solutions across hotel properties.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="relative">
+                           <div class="timeline-dot absolute left-1/2 top-0 bg-[#00A896]"></div>
+                            <div class="md:flex items-center md:space-x-8">
+                                <div class="md:w-1/2 text-left md:text-right pr-8">
+                                    <p class="text-xl font-bold text-gray-900">Foundation in IT Systems</p>
+                                    <p class="text-gray-700">2012 – 2018</p>
+                                </div>
+                                <div class="md:w-1/2 mt-4 md:mt-0 pl-8 border-l-4 border-transparent md:border-l-0 md:border-r-4 md:border-r-transparent">
+                                    <div class="glass-card p-6">
+                                        <h3 class="font-bold text-gray-900">IT Assistant & Systems Coordinator</h3>
+                                        <p class="text-gray-600">Hand & Company (Multiple Hotels)</p>
+                                        <p class="mt-2 text-sm text-gray-700">Provided foundational IT support, implemented hotel software, and managed network systems across multiple locations.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Project Showcase Section -->
+            <section id="projects" class="my-20 py-12">
+                 <h2 class="text-3xl font-bold text-center mb-4 text-gray-900">Project Showcase: Building Real-World Solutions</h2>
+                <p class="text-center max-w-2xl mx-auto text-gray-700 mb-12">Theory is important, but execution is everything. Here are some of the full-scale products and solutions I've architected and developed, turning complex ideas into tangible, value-driven applications.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="glass-card glass-card-hover p-6 flex flex-col items-center text-center">
+                        <img src="images/FENG.png" alt="FENG logo" class="project-logo">
+                        <h3 class="text-xl font-bold text-gray-900">Feng (Catering)</h3>
+                        <p class="text-sm text-gray-700 mt-2 flex-grow">A mobile application designed to streamline catering services, allowing users to browse menus, place orders, and manage catering events.</p>
+                    </div>
+                    <div class="glass-card glass-card-hover p-6 flex flex-col items-center text-center">
+                        <img src="images/Virtual Try Room AI.png" alt="Virtual Try Room AI logo" class="project-logo">
+                        <h3 class="text-xl font-bold text-gray-900">Virtual Try Room</h3>
+                        <p class="text-sm text-gray-700 mt-2 flex-grow">An innovative application that leverages AI to allow users to virtually try on clothing and accessories, helping them visualize different styles before making a purchase.</p>
+                    </div>
+                    <div class="glass-card glass-card-hover p-6 flex flex-col items-center text-center">
+                        <img src="images/Bible CHat.png" alt="Bible Chat logo" class="project-logo">
+                        <h3 class="text-xl font-bold text-gray-900">Bible Chat</h3>
+                        <p class="text-sm text-gray-700 mt-2 flex-grow">A community-focused app that facilitates conversations and connects users through shared religious faith and knowledge.</p>
+                    </div>
+                    <div class="glass-card glass-card-hover p-6 flex flex-col items-center text-center">
+                        <img src="images/ZIMBI.png" alt="Zimbi logo" class="project-logo">
+                        <h3 class="text-xl font-bold text-gray-900">Zimbi (AI Wardrobe Style)</h3>
+                        <p class="text-sm text-gray-700 mt-2 flex-grow">An AI-powered personal stylist app that helps users manage their wardrobe and get style recommendations based on their existing clothes and preferences.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Certifications & Languages Section -->
+            <section id="certs-lang" class="my-20 py-12">
+                 <h2 class="text-3xl font-bold text-center mb-4 text-gray-900">Knowledge & Communication</h2>
+                <p class="text-center max-w-2xl mx-auto text-gray-700 mb-12">Continuous learning and clear communication are key to success. My certifications validate my technical skills, while my language abilities enable effective collaboration in global teams.</p>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                     <div class="glass-card p-6 md:p-8">
+                        <h3 class="text-xl font-bold text-gray-900 text-center mb-6">Language Proficiency</h3>
+                        <div class="chart-container" style="max-width: 450px; margin: auto;">
+                            <canvas id="languageChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="glass-card p-6 md:p-8">
+                        <h3 class="text-xl font-bold text-gray-900 text-center mb-6">Key Certifications</h3>
+                        <ul class="space-y-4 text-lg">
+                            <li class="flex items-center"><i class="fas fa-award text-2xl mr-4 accent-color-secondary"></i> <span class="text-gray-700">AWS Cloud Essentials</span></li>
+                            <li class="flex items-center"><i class="fas fa-brain text-2xl mr-4 accent-color-secondary"></i> <span class="text-gray-700">Google Prompting Essentials</span></li>
+                            <li class="flex items-center"><i class="fas fa-project-diagram text-2xl mr-4 accent-color-secondary"></i> <span class="text-gray-700">Project Management – Coursera</span></li>
+                             <li class="flex items-center"><i class="fas fa-cogs text-2xl mr-4 accent-color-secondary"></i> <span class="text-gray-700">CCNA, CCNP, MCITP</span></li>
+                             <li class="flex items-center"><i class="fas fa-user-tie text-2xl mr-4 accent-color-secondary"></i> <span class="text-gray-700">UX Design - Google</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+        
+        <!-- Footer -->
+        <footer class="text-center py-16 mt-12 border-t border-gray-200">
+            <h2 class="text-3xl font-bold text-gray-900">Ready to Transform? Let's Collaborate.</h2>
+            <p class="mt-4 max-w-xl mx-auto text-gray-700">Let's connect and discuss how my expertise can bring your projects to life.</p>
+            <div class="mt-8 flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                <a href="https://github.com/nextgenhafeez" target="_blank" class="download-button">
+                    View GitHub
+                </a>
+                <a href="https://BlackLayers.ca" target="_blank" class="download-button">
+                    Visit BlackLayers.ca
+                </a>
+            </div>
+            <div class="mt-12 text-lg text-gray-700 grid grid-cols-1 md:grid-cols-2 gap-y-2 gap-x-8 max-w-2xl mx-auto">
+                <p class="flex items-center justify-center md:justify-end">
+                    <i class="fas fa-map-marker-alt text-xl mr-2 accent-color"></i> Safi, Morocco
+                </p>
+                <p class="flex items-center justify-center md:justify-start">
+                    <i class="fas fa-envelope text-xl mr-2 accent-color"></i> bl@blacklayers.ca
+                </p>
+                <p class="flex items-center justify-center md:justify-end">
+                    <i class="fas fa-envelope text-xl mr-2 accent-color"></i> hafeez1618@outlook.com
+                </p>
+                <p class="flex items-center justify-center md:justify-start">
+                    <i class="fas fa-mobile-alt text-xl mr-2 accent-color"></i> +212 699 945033 (Mobile)
+                </p>
+                 <p class="flex items-center justify-center md:justify-end">
+                    <i class="fab fa-whatsapp text-xl mr-2 accent-color"></i> +212 699 945033
+                </p>
+                <p class="flex items-center justify-center md:justify-start">
+                    <i class="fas fa-building text-xl mr-2 accent-color"></i> +1 587 429 6200 (Company)
+                </p>
+            </div>
+        </footer>
+
+    </div>
+
+    <script>
+        const tooltipConfig = {
+            plugins: {
+                tooltip: {
+                    callbacks: {
+                        title: function(tooltipItems) {
+                            const item = tooltipItems[0];
+                            let label = item.chart.data.labels[item.dataIndex];
+                            if (Array.isArray(label)) {
+                                return label.join(' ');
+                            }
+                            return label;
+                        },
+                        label: function(context) {
+                            let label = context.dataset.label || '';
+                            if (label) {
+                                label += ': ';
+                            }
+                            label += context.raw;
+                            return label;
+                        }
+                    }
+                }
+            }
+        };
+
+        const wrapLabel = (label, maxWidth = 18) => {
+            if (label.length <= maxWidth) return label;
+            const words = label.split(' ');
+            let lines = [];
+            let currentLine = '';
+            words.forEach(word => {
+                if ((currentLine + ' ' + word).trim().length > maxWidth && currentLine.length > 0) {
+                    lines.push(currentLine.trim());
+                    currentLine = word;
+                } else {
+                    currentLine = (currentLine + ' ' + word).trim();
+                }
+            });
+            if (currentLine) lines.push(currentLine);
+            return lines;
+        };
+
+        const renderSkillsChart = () => {
+            const ctx = document.getElementById('skillsRadarChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'radar',
+                data: {
+                    labels: [
+                        'AI & Prompt Engineering',
+                        'Cloud & DevOps',
+                        'Full-Stack Web Dev',
+                        'Flutter & iOS Dev',
+                        'Project Management',
+                        'IT Operations'
+                    ].map(l => wrapLabel(l)),
+                    datasets: [{
+                        label: 'Proficiency Level',
+                        data: [9, 8.5, 8, 8.5, 7, 9.5],
+                        backgroundColor: 'rgba(0, 168, 150, 0.2)',
+                        borderColor: 'rgba(0, 168, 150, 1)',
+                        pointBackgroundColor: 'rgba(0, 168, 150, 1)',
+                        pointBorderColor: '#fff',
+                        pointHoverBackgroundColor: '#fff',
+                        pointHoverBorderColor: 'rgba(0, 168, 150, 1)'
+                    }]
+                },
+                options: {
+                    maintainAspectRatio: false,
+                    scales: {
+                        r: {
+                            angleLines: { color: 'rgba(0, 0, 0, 0.1)' },
+                            grid: { color: 'rgba(0, 0, 0, 0.1)' },
+                            pointLabels: { 
+                                color: '#555',
+                                font: { size: 12 }
+                            },
+                            ticks: {
+                                display: false,
+                                max: 10
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                            titleFont: { size: 14, weight: 'bold' },
+                            bodyFont: { size: 12 },
+                            padding: 10
+                        }
+                    }
+                }
+            });
+        };
+
+        const renderLanguageChart = () => {
+            const ctx = document.getElementById('languageChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['English', 'Arabic'],
+                    datasets: [{
+                        label: 'Proficiency',
+                        data: [100, 75], 
+                        backgroundColor: ['#00A896', '#FF6B6B'],
+                        borderColor: ['#00A896', '#FF6B6B'],
+                        borderWidth: 1,
+                        borderRadius: 8
+                    }]
+                },
+                options: {
+                    indexAxis: 'y',
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: {
+                            beginAtZero: true,
+                            max: 100,
+                            grid: { color: 'rgba(0, 0, 0, 0.1)' },
+                            ticks: { 
+                                color: '#555',
+                                callback: function(value) {
+                                    if(value === 100) return 'Fluent';
+                                    if(value === 75) return 'Conversational';
+                                    return value + '%';
+                                }
+                            }
+                        },
+                        y: {
+                           grid: { display: false },
+                           ticks: { color: '#555', font: { size: 14, weight: 'bold' } }
+                        }
+                    },
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                            titleFont: { size: 14, weight: 'bold' },
+                            bodyFont: { size: 12 },
+                            padding: 10
+                        }
+                    }
+                }
+            });
+        };
+
+        window.onload = function() {
+            renderSkillsChart();
+            renderLanguageChart();
+        };
+
+    </script>
+</body>
+</html>
